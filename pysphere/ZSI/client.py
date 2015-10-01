@@ -17,6 +17,9 @@ from pysphere.ZSI.address import Address
 from pysphere.ZSI.wstools.logging import getLogger as _GetLogger
 _b64_encode = base64.encodestring
 
+import ssl                                                                                                                                                                                                           
+ssl._create_default_https_context = ssl._create_unverified_context
+
 class _AuthHeader:
     """<BasicAuth xmlns="ZSI_SCHEMA_URI">
            <Name>%s</Name><Password>%s</Password>
