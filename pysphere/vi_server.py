@@ -37,6 +37,11 @@ from pysphere.vi_performance_manager import PerformanceManager
 from pysphere.vi_task_history_collector import VITaskHistoryCollector
 from pysphere.vi_mor import VIMor, MORTypes
 
+# disable ssl
+import ssl
+default_context = ssl._create_default_https_context
+ssl._create_default_https_context = ssl._create_unverified_context
+
 class VIServer:
 
     def __init__(self):
